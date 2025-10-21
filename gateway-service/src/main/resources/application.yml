@@ -5,10 +5,10 @@ spring:
         webflux:
           routes:
             - id: inventory-route
-              uri: http://localhost:8082
+              uri: lb://INVENTORY-SERVICE
               predicates:
                 - Path=/api/products/**
             - id: customer-route
-              uri: http://localhost:8081
+              uri: lb://CUSTOMER-SERVICE
               predicates:
                 - Path=/api/customers/**
